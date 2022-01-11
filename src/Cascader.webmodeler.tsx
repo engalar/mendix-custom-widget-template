@@ -16,11 +16,11 @@ type VisibilityMap = {
     [P in keyof CascaderContainerProps]: boolean;
 };
 
-
 export function getVisibleProperties(props: CascaderContainerProps, visibilityMap: VisibilityMap): VisibilityMap {
     // visibilityMap.nodeConstraint = props.nodeDataSource === "xpath";
     // visibilityMap.nodeGetDataMicroflow = props.nodeDataSource === "microflow";
     // visibilityMap.nodeGetDataNanoflow = props.nodeDataSource === "nanoflow";
+    console.log(props);
 
     return visibilityMap;
 }

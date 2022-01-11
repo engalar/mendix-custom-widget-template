@@ -15,14 +15,17 @@ interface CommonProps {
     friendlyId?: string;
     mxform: mxui.lib.form._FormBase;
     mxObject?: mendix.lib.MxObject;
+    readOnly: boolean;
     style: string;
 }
 
-export interface CascaderContainerProps extends CommonProps {
+interface _W {}
+
+export interface CascaderContainerProps extends CommonProps, _W {
     myString: string;
 }
 
-export interface CascaderPreviewProps {
+export interface CascaderPreviewProps extends _W {
     class: string;
     style: string;
     styleObject: CSSProperties;
@@ -30,5 +33,5 @@ export interface CascaderPreviewProps {
 }
 
 export interface VisibilityMap {
-    myString: boolean;
+    [P in _W]: boolean;
 }
