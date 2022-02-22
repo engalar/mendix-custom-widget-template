@@ -40,6 +40,7 @@
     "pluggable-widgets-typing-generator": "3.1.0",
     "@mendix/pluggable-widgets-tools": "8.6.0",
     "@types/big.js": "^4.0.5",
+    "@types/dojo": "^1.9.34",
     "@types/classnames": "^2.2.4",
     "@types/debounce": "^1.2.0",
     "@types/enzyme": "^3.1.10",
@@ -51,7 +52,7 @@
     "@types/react-resize-detector": "^4.2.0",
     "@types/react-test-renderer": "^16.8.1",
     "@types/webdriverio": "^4.13.0",
-    "mendix-client": "^7.15.8",
+    "@engalar/mendix-client": "^8.0.0",
     "tslint": "^5.20.1",
     "typescript": "^3.7.5",
     "webpack-bundle-analyzer": "^3.6.0"
