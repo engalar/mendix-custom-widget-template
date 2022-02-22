@@ -1,3 +1,4 @@
+import { makeObservable } from "mobx";
 import { BaseMxObject } from "./BaseMxObject";
 
 export class OptionItem extends BaseMxObject {
@@ -8,5 +9,15 @@ export class OptionItem extends BaseMxObject {
      */
     constructor(guid: string, public idx: number) {
         super(guid);
+        makeObservable(this, {});
+        this.update();
+        this.onChange = () => {
+            this.update();
+        };
+    }
+    update() {
+        if (this.mxObject) {
+            //todo
+        }
     }
 }

@@ -1,4 +1,4 @@
-import { createElement, useState } from "react";
+import { createElement, useEffect, useMemo, useState } from "react";
 
 import { CascaderContainerProps } from "../typings/CascaderProps";
 
@@ -7,11 +7,38 @@ import "./ui/Cascader.scss";
 import { Observer } from "mobx-react";
 import { Store } from "./store";
 import { CascaderComponent } from "./components/CascaderComponent";
+import { useUnmount } from "ahooks";
+
+const parseStyle = (style = ""): { [key: string]: string } => {
+    try {
+        return style.split(";").reduce<{ [key: string]: string }>((styleObject, line) => {
+            const pair = line.split(":");
+            if (pair.length === 2) {
+                const name = pair[0].trim().replace(/(-.)/g, match => match[1].toUpperCase());
+                styleObject[name] = pair[1].trim();
+            }
+            return styleObject;
+        }, {});
+    } catch (_) {
+        return {};
+    }
+};
 
 export default function Cascader(props: CascaderContainerProps) {
-    console.log(props);
+    const store = useMemo(() => new Store(props), []);
 
-    const [store] = useState(new Store());
+    useEffect(() => {
+        store.mxOption = props;
+        return () => {
+        }
+    }, [store, props]);
 
-    return <Observer>{() => <CascaderComponent store={store} />}</Observer>;
+    useUnmount(() => {
+        store.dispose();
+    });
+
+    return <Observer>{() =>
+        <div style={parseStyle(props.style)}>
+            <CascaderComponent store={store} />
+        </div>}</Observer>;
 }
