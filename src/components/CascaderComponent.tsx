@@ -1,5 +1,4 @@
 import { createElement } from "react";
-import { Observer } from "mobx-react";
 import { Store } from "../store";
 
 import { Cascader as C } from "antd";
@@ -12,11 +11,7 @@ const onChange = (value: any, selectedOptions: any) => {
 };
 
 export function CascaderComponent(props: CascaderComponentProps) {
-    console.log(props);
-
     return (
-        <Observer>
-            {() => <C options={props.store.options} loadData={props.store.load} onChange={onChange} changeOnSelect />}
-        </Observer>
+        <C options={props.store.options} loadData={props.store.load} onChange={onChange} changeOnSelect />
     );
 }

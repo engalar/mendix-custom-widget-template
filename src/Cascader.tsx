@@ -1,8 +1,8 @@
-import { createElement, useEffect, useMemo, useState } from "react";
+import { createElement, useEffect, useMemo } from "react";
 
 import { CascaderContainerProps } from "../typings/CascaderProps";
 
-import "./ui/Cascader.scss";
+import "./ui/index.scss";
 
 import { Observer } from "mobx-react";
 import { Store } from "./store";
@@ -38,7 +38,7 @@ export default function Cascader(props: CascaderContainerProps) {
     });
 
     return <Observer>{() =>
-        <div style={parseStyle(props.style)}>
+        <div className={props.class} style={parseStyle(props.style)}>
             <CascaderComponent store={store} />
         </div>}</Observer>;
 }

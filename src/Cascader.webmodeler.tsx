@@ -10,7 +10,7 @@ export class preview extends Component<CascaderPreviewProps> {
 }
 
 export function getPreviewCss(): string {
-    return require("./ui/Cascader.scss");
+    return require("./ui/index.scss");
 }
 type VisibilityMap = {
     [P in keyof CascaderContainerProps]: boolean;

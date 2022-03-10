@@ -19,17 +19,16 @@ interface CommonProps {
     style: string;
 }
 
-interface _W {}
-
-export interface CascaderContainerProps extends CommonProps, _W {
+interface _W {
     myString: string;
 }
+
+export interface CascaderContainerProps extends CommonProps, _W {}
 
 export interface CascaderPreviewProps extends _W {
     class: string;
     style: string;
     styleObject: CSSProperties;
-    myString: string;
 }
 
 export interface VisibilityMap {
