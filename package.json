@@ -1,7 +1,7 @@
 {
   "name": "cascader",
   "widgetName": "Cascader",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Template repo for legacy custome wiget",
   "copyright": "2021 Mendix",
   "author": "Liu Wengao <wengao.liu@siemens.com>",
@@ -56,6 +56,7 @@
     "make-dir-cli": "^3.0.0",
     "pluggable-widgets-typing-generator": "3.1.0",
     "rimraf": "^3.0.2",
+    "sass": "^1.56.1",
     "tslint": "^5.20.1",
     "typescript": "^3.7.5",
     "webpack-bundle-analyzer": "^3.6.0"
